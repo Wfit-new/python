@@ -1,4 +1,9 @@
-sports = {'Ronaldo' : 'Soccer', 'Lebron' : 'Basketball', 'Federer' : 'Tennis'} 
-sports = sports.values() 
-sports_list = list(sports) 
-print(sports_list)
+def fibonacci(num):
+  fibo = [0,1]
+  i = 2
+  while i<= num:
+     next_fibo = fibo[-1] + fibo[i-2]
+     fibo.append(next_fibo)
+     i += 1
+  return fibo
+print(fibonacci(9))
