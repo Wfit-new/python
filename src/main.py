@@ -1,17 +1,22 @@
-class Bank:
+class StarBox:
     def __init__(self):
-        self.balance = 1000
-    def get_balance(self):
-        return self.balance
-    def withdraw(self, amount):
-        self.balance = self.balance - amount
-        return amount
-            
-# now use the class
-my_bank = Bank()
-my_bank.withdraw(100)
-balance = my_bank.get_balance()
-print(balance)
-my_bank.withdraw(50)
-balance = my_bank.get_balance()
-print(balance)
+        self.stock = 100
+        self.sell = 0
+    def new_order(self, quantity):
+        if quantity < self.stock:
+            self.stock = self.stock - quantity
+            self.sell = self.sell + 3.5*quantity
+            print("thanks for buying coffee")
+        else:
+            print("Sorry! We are out of coffee")
+            self.restock()
+    def restock(self):
+        self.stock = self.stock + 100
+        print("Restocked. Updated stock", self.stock)
+
+coffeeBar = StarBox()
+coffeeBar.new_order(30)
+coffeeBar.new_order(30)
+coffeeBar.new_order(30)
+coffeeBar.new_order(30)
+coffeeBar.new_order(30)
