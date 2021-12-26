@@ -1,19 +1,16 @@
-class Car:
-    car_name = "Wheeljack"
-    def move(self):
-        print(self.car_name, "Car is Moving")
+def binary_search(list, find_value):
+    low = 0
+    high = len(list)
+    while low <= high:
+        mid = (low + high)//2
+        if list[mid] < find_value:
+            low = mid
+        elif list[mid] > find_value:
+            high = mid
+        else:
+            return mid
 
-class Truck:
-    truck_name = "Optimus Prime"
-    def move(self):
-        print( self.truck_name, "Truck is moving")
 
-class Bike:
-    bike_name = "Elita-One"
-    def move(self):
-        print(self.bike_name, "Bike is moving")
-
-vehicles = [Car(), Truck(), Bike()]
-
-for vehicle in vehicles:
-    vehicle.move()
+nums = [1,2,3,4,5,6,7,8,9]
+index = binary_search(nums, 8)
+print(index)
